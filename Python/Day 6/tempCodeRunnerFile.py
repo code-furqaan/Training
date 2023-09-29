@@ -1,3 +1,2 @@
-):
-        self.__data = data
-        self.__next = None
+if temp.get_data() == data and flag==False:
+            #     prev.s

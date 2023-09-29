@@ -16,8 +16,8 @@ class Node:
         self.__data = data
 
 class Linked_List:
-    def __init__(self, node):
-        self.__node = node
+    def __init__(self):
+        self.__node = None
     
     def update_first(self, old_data, new_data):
         temp = self.__node
@@ -64,13 +64,17 @@ class Linked_List:
         else:
             print(f"{old_data} not found")
     
-    def append(self, node):
+    def append(self, data):
         temp = self.__node
+        node = Node(data)
         # print(node.__data)
-        while temp.get_next() != None:
-            temp = temp.get_next()
-            # print(node.__data)    
-        temp.set_next(node)
+        if temp == None:
+            self.__node = node
+        else:
+            while temp.get_next() != None:
+                temp = temp.get_next()
+                # print(node.__data)    
+            temp.set_next(node)
         print(f"{node.get_data()} appended")
     
     def print_list(self):
@@ -109,18 +113,18 @@ class Linked_List:
 
 def main():
 
-    l1 = Linked_List(Node(1))
+    l1 = Linked_List()
     # node = l1
 
-    l1.append(Node(2))
-    l1.append(Node(3))
-    l1.append(Node(4))
-    l1.append(Node(2))
-    l1.append(Node(5))
-    l1.append(Node(2))
-    l1.append(Node(2))
-    l1.append(Node(6))
-    l1.append(Node('hello'))
+    l1.append(2)
+    l1.append(3)
+    l1.append(4)
+    l1.append(5)
+    l1.append(6)
+    l1.append(7)
+    l1.append(8)
+    l1.append(9)
+    l1.append("8454656")
 
     l1.print_list()
 
