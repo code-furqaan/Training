@@ -103,8 +103,8 @@ class BankAcount(Bank):
     def get_balance(self):
         return self.__balance
     
-    def get_details(self):
-        return (self.__name, self.__account_number, self.__account_type, self.__balance)
+    def __str__(self):
+        return self.__name, self.__account_number, self.__account_type, self.__balance
     def get_rate(self):
         return self.__account_type.get_interest_rate()
 
